@@ -88,7 +88,7 @@ namespace Pustok.Controllers
             }
             else
             {
-                BasketItem userBasketItems = _dataContext.BasketItems.FirstOrDefault(b=>b.AppUserId == user.Id && b.BookId == id );
+                BasketItem userBasketItems = _dataContext.BasketItems.FirstOrDefault(b=>b.AppUserId == user.Id && b.BookId == id && b.IsDeleted == false);
                 if (userBasketItems != null) userBasketItems.Count++;
                 else
                 {
